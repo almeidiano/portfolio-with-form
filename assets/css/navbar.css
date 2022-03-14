@@ -1,0 +1,74 @@
+a i{
+	margin: 0 0.3rem;
+}
+.menu-icon{
+	background-color: rgba(0, 184, 228, 0.8);
+	width: 98%;
+	text-align: right;
+	color: #FFF;
+	height: 50px;
+	line-height: 50px;
+	padding-right: 20px !important;
+	font-size: 30px;
+	position: fixed;
+	display: none;
+}
+.menu-icon i{
+	cursor: pointer;
+}
+.menu-int-active{
+	background-color: rgba(0, 0, 0, 0.7);
+	height: 70px;
+	transition: 0.5s;
+}
+header nav{
+	z-index: 2 !important;
+	transition: 0.5s;
+	width: 100%; 
+	position: fixed;
+	height: 100px;
+	line-height: 80px;
+	display: flex;
+	font-family: Poppins;
+}
+header nav .logo{
+	width: 50%;
+	display: flex;
+	justify-content: flex-start;
+}
+header nav .logo img{
+	height: 50px;
+	padding-top: 7px !important;
+}
+header nav .nav-items{
+	width: 50%;
+	display: flex;
+	justify-content: flex-end;
+	line-height: 65px;
+}
+header nav ul{
+	display: flex;
+	list-style: none;
+}
+header nav ul li{
+	margin: 0px 20px;
+}
+header nav ul li a{
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 16px;
+	color: #e6e6e6;
+	transition: 0.5s;
+	display: flex;
+}
+header nav ul li a i{
+	line-height: 3.75rem !important;
+}
+header nav ul li a:hover{
+	transition: 0.3s;
+	color: rgb(125, 180, 236);
+}
+.item-activated{
+	transition: 0.3s;
+	color: rgb(125, 180, 236);
+}

@@ -1,0 +1,135 @@
+.darkBackground{
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    position: fixed;
+    display: none;
+}
+.activated{
+    display: block;
+}
+.sidebar{
+	display: flex;
+	flex-direction: column;
+    background: #153e8e;
+    position: fixed;
+    height: 100%;
+    width: 0%;
+    z-index: 999;
+    transition: all 0.5s ease;
+    visibility: hidden;
+}
+.sidebar-logo{
+    padding: 30px 0px 10px 0px;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.bar-icon-area{
+    position: fixed;
+    z-index: 999;
+    right: 5%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+.bar-icon{
+    display: none;
+    cursor: pointer;
+    height: 40px;
+    border: 1px solid #CCC;
+    position: relative;
+    width: 45px;
+    border-radius: 5px;
+    transition: 0.3s ease all;
+}
+.menu-int-active .bar-icon{
+    border-color: rgb(100, 100, 100);
+}
+.bar-icon i{
+    position: absolute;
+    color: #FFF;
+    font-size: 27px;
+    transform: translate(45%, 23%);
+}
+.times{
+    opacity: 0;
+    transition: 0.3s ease;
+}
+.active .times{
+    transform: translate(82%, 27%);
+    opacity: 1;
+    transition: 0.3s ease;
+}
+.hamburguer{
+    transition: 0.3s ease;
+}
+.active .hamburguer{
+    transition: 0.3s ease;
+    transform: translate(9px, 5px) rotate(180deg);
+    opacity: 0;
+}
+.active{
+    background-color: #153e8e;
+    transition: 0.3s ease all;
+}
+.sidebar-activated .sidebar-logo{
+    opacity: 1 !important;
+    transition: all 0.3s ease;
+}
+.sidebar-activated{
+    visibility: visible;
+    width: 45%;
+}
+.sidebar-activated nav ul{
+    opacity: 1 !important;
+}
+.sidebar nav ul{
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+.sidebar nav li{
+    width: 90%;
+    display: flex;
+    margin: auto;
+    margin-top: 10px;
+}
+.sidebar nav li a{
+    font-size: 17px;
+    padding: 15px 10px;
+    display: inline-block;
+    width: 90%;
+    color: #FFF;
+    border-radius: 6px;
+    margin: auto;
+}
+.sidebar nav li a:hover{
+    background-color: #0a3178;
+}
+.sidebar nav li a span{
+    padding-left: 5px;
+}
+@media (max-width: 768px) {
+    header nav .logo img{
+        padding-top: 9px !important;
+    }
+
+    header nav ul li{
+        display: none;
+        list-style: none;
+    }
+
+/*    header nav{
+        display: none;
+    }*/
+
+    .bar-icon{
+        display: block;
+    }
+}

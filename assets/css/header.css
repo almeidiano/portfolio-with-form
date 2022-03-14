@@ -1,0 +1,75 @@
+header{
+	background-image: url('../img/bg.jpg') !important;
+	background-size: cover !important;
+	width: 100%;
+	height: 100vh;
+}
+.header-section{  
+	display: flex;
+	padding-top: 90px;
+	height: 90vh;
+}
+.header-main-content{
+	position: relative;
+}
+.header-content{
+	padding-top: 10rem;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	animation: showSection .6s forwards;
+}
+.header-content h1{
+	font-family: 'Poppins';
+	font-size: 58px;
+	margin: -5px;
+}
+.header-content .description{
+	font-family: 'Montserrat';
+	padding-bottom: 10px;
+}
+.bro-pic{
+	display: flex;
+	justify-content: center;
+	width: 50%;
+}
+.bro-pic img{
+	height: 500px;
+	animation: showBro .6s forwards;
+}
+.know-more{
+	position: absolute;
+	bottom: 1px;
+	height: 150px;
+	text-align: center;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	animation: knowAnimation .6s infinite alternate;
+}
+.know-more i{
+	font-size: 35px;
+}
+@keyframes showSection{
+	from{
+		opacity: 0;
+		transform: translate3d(-100px, 0, 0);
+	}
+	to{
+		transform: translate3d(0, 0, 0);
+	}
+}
+@keyframes showBro{
+	from{
+		opacity: 0;
+		transform: translate3d(100px, 0, 0);
+	}
+	to{
+		transform: translate3d(0px, 0, 0);
+	}
+}
+@keyframes knowAnimation{
+	0% {transform: translateY(0px);}
+	100% {transform: translateY(-10px);}
+}
