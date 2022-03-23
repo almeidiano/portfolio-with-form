@@ -15,8 +15,7 @@ function listProjects() {
                 projectItem.querySelector(".project-details .demo").href = link.demoLink;
                 if(link.demoLink.includes("/") == false){
                     projectItem.querySelector(".project-details .demo").classList.add("disabled");
-                    projectItem.querySelector(".project-details .demo").href = "#projects";
-                    projectItem.querySelector(".project-details .demo").target = "_self";
+                    projectItem.querySelector(".project-details .demo").removeAttribute("href");
                 }
             }
 
@@ -24,8 +23,7 @@ function listProjects() {
                 projectItem.querySelector(".project-details .github").href = link.githubLink;
                 if(link.githubLink.includes("/") == false){
                     projectItem.querySelector(".project-details .github").classList.add("disabled");
-                    projectItem.querySelector(".project-details .github").href = "#projects";
-                    projectItem.querySelector(".project-details .github").target = "_self";
+                    projectItem.querySelector(".project-details .github").removeAttribute("href");
                 }
             }
         })
@@ -37,16 +35,19 @@ function listProjects() {
 
             switch(stack) {
                 case 'html/css':
-                    projectStackImg[0].src = 'assets/img/icons/html-css-shield.svg'
+                projectStackImg[0].src = 'assets/img/icons/html-css-shield.svg'
                 break;
                 case 'javascript':
-                    projectStackImg[1].src = 'assets/img/icons/javascript-icon.svg'
+                projectStackImg[1].src = 'assets/img/icons/javascript-icon.svg'
                 break;
                 case 'bootstrap':
-                    projectStackImg[2].src = 'assets/img/icons/bootstrap-shield.svg'
+                projectStackImg[2].src = 'assets/img/icons/bootstrap-shield.svg'
                 break;
                 case 'php':
-                    projectStackImg[3].src = 'assets/img/icons/php-shield.svg'
+                projectStackImg[3].src = 'assets/img/icons/php-shield.svg'
+                break;
+                case 'laravel':
+                projectStackImg[3].src = 'assets/img/icons/laravel-min-icon.svg'
                 break;
             }
         })
@@ -102,6 +103,7 @@ function getProjectInfo() {
                 let allCarouselItems = cs(".projectModal .carousel-item");
                 allCarouselItems.forEach(item => {
                     item.classList.remove("projectThumbActive");
+                    item.remove();
                 }) 
             }
 
@@ -149,29 +151,39 @@ function getProjectInfo() {
                     let button = e.srcElement;
                     button.classList.toggle("activated");
                 }
-            });
+            })
 
-            // function checkActivatedButton() {
-            //     let buttons = cs(".projectModal .carousel-indicators button");
-            //     buttons.forEach(button => {
-            //         button.classList.remove("activated");
-            //     })
-                
-            //     let button = c(".carousel-indicators button.activated");
-            //     console.log(button);
-            // }
+            const carouselItem = c(".projectModal .carousel-item");
+            const allCarouselItems = cs(".projectModal .carousel-item");
+            let buttons = cs(".projectModal .carousel-indicators button");
+            let i = 0;
 
-            // checkActivatedButton();
+            function initCarousel() {
+                if(allCarouselItems[i].classList.contains("projectThumbActive") == false) {
+                    i++;
+                    if(i > allCarouselItems.length - 1) {
+                        i = 0;
+                    }
+                }
 
-            // let blablabla = setInterval((e) => {
-            //     let buttons = cs(".projectModal .carousel-indicators button");
-            //     buttons.forEach(button => {
-            //         button.classList.remove("activated");
-            //     })
-            //     // let button = e.srcElement;
-            //     // button.classList.toggle("activated");
-            //     // c(".projectModal img").src = projectImg.src;
-            // }, 800);
+                allCarouselItems.forEach(item => {
+                    item.classList.remove("projectThumbActive");
+                });
+                buttons.forEach(button => {
+                    button.classList.remove("activated");
+                })
+
+                i++;
+
+                if(i > allCarouselItems.length - 1) {
+                    i = 0;
+                }
+
+                allCarouselItems[i].classList.add("projectThumbActive");
+                buttons[i].classList.add("activated");
+            }
+
+            setInterval(initCarousel, 3000);
 
             let projectStacks = foundProject.projectStacks;
             projectStacks.forEach(stack => {
@@ -181,16 +193,19 @@ function getProjectInfo() {
 
                 switch(stack) {
                     case 'html/css':
-                        projectStacksImg[0].src = 'assets/img/icons/html-css-shield.svg'
+                    projectStacksImg[0].src = 'assets/img/icons/html-css-shield.svg'
                     break;
                     case 'javascript':
-                        projectStacksImg[1].src = 'assets/img/icons/javascript-icon.svg'
+                    projectStacksImg[1].src = 'assets/img/icons/javascript-icon.svg'
                     break;
                     case 'bootstrap':
-                        projectStacksImg[2].src = 'assets/img/icons/bootstrap-shield.svg'
+                    projectStacksImg[2].src = 'assets/img/icons/bootstrap-shield.svg'
                     break;
                     case 'php':
-                        projectStacksImg[3].src = 'assets/img/icons/php-shield.svg'
+                    projectStacksImg[3].src = 'assets/img/icons/php-shield.svg'
+                    break;
+                    case 'laravel':
+                    projectStacksImg[3].src = 'assets/img/icons/laravel-min-icon.svg'
                     break;
                 }
             })

@@ -110,7 +110,9 @@
 						<div id="typed-strings" style="display: none;"></div>
 						<span id="typed" style="white-space:pre; font-size: 18px !important"></span>
 					</div>
-					<a href="#projects" class="button button-outline-primary high-emphasis"><i class="fa-solid fa-eye"></i>Ver Projetos</a>
+					<div class="header-button">
+						<a href="#projects" class="button button-outline-primary high-emphasis"><i class="fa-solid fa-eye"></i>Ver Projetos</a>
+					</div>
 				</div>
 				<div class="bro-pic">
 					<img src="assets/img/developer-activity-bro.svg" />
@@ -136,7 +138,12 @@
 								<div class="about-main-title high-emphasis">
 									<h1><span>Sou entusiasta em desenvolvimento web</span></h1>
 								</div>
-								<p>Olá, me chamo <span style="color: #00b8e4;">Samuel de Almeida</span> tenho 17 anos e sou apaixonado pelo desenvolvimento web, eu sempre ando buscando em aprender e colocar em prática novos conteúdos, já que desde <span style="color: #00b8e4">2018</span> comecei do zero meus estudos nessa área do desenvolvimento web, o meu maior objetivo que eu ando buscando é me tornar Fullstack, também quero conseguir ajudar pessoas com os meus projetos que possam ajudar-los de forma genuína.</p>
+								<p>Lorem <span style="color: #00b8e4;">Ipsum</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 								<div class="about-social-area">
 									<a href="https://github.com/almeidiano" target="_blank"><i class="fa-brands fa-github"></i></a>
 									<a href="#"><i class="fa-brands fa-youtube"></i></a>
@@ -150,13 +157,16 @@
 			</div>
 			<div class="skills">
 				<div class="skills-content">
-					<div class="">
+					<div class="skills-content-area">
 						<div class="skills-main-content">
-							<div class="skills-title high-emphasis"><h2>Skills</h2></div>
-							<div class="skills-subtitle high-emphasis">
-								<h3>Tecnologias que estou visando no momento</h3>
+							<div class="skills-title-content">
+								<div class="skills-title high-emphasis"><h2>Skills</h2></div>
+								<div class="skills-subtitle high-emphasis">
+									<h3>Tecnologias que estou visando no momento</h3>
+								</div>
 							</div>
 							<div class="skills-section">
+								<div class="skills-section-area">
 
 								<div class="skill-item">
 									<div class="skill-logo">
@@ -167,8 +177,10 @@
 										<div class="skill-status"><span>--</span></div>
 									</div>
 								</div>
+							</div>
 
 							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -208,7 +220,7 @@
 	</div>
 
 	<div class="contact-section" id="contact">
-		<div class="container-fluid">
+		<div class="contact-area container-fluid">
 			<div class="contact">
 				<div class="contact-content">
 					<div class="contact-main-content">
@@ -263,68 +275,6 @@
 
 <!-- scripts -->
 <script type="text/javascript">
-
-	async function getProjectInfo(info) {
-		const loadingDarkBg = document.querySelector(".loadingDarkBg");
-		const darkBackground = document.querySelector(".darkBackground");
-		const body = document.querySelector("body");
-		document.querySelector(".projectModal").classList.remove("closeModal");
-
-		loadingDarkBg.style.display = "flex"
-		body.style.overflow = "hidden";
-
-
-		setTimeout(() => {
-			loadingDarkBg.style.opacity = "1";
-		}, 200);
-
-		function disableLoadingDarkBg() {
-			loadingDarkBg.style.display = "none"
-			body.style.overflow = "auto";
-		}
-
-		let projectId = info.getAttribute("data-id");
-
-		let req = await fetch('assets/js/projects.js');
-
-		if(req.status == 200) {
-			disableLoadingDarkBg();
-			loadingDarkBg.style.opacity = "0";
-
-			let projectModalArea = document.querySelector(".projectModalArea");
-			let projectModal = document.querySelector(".projectModal");
-
-			darkBackground.classList.toggle("visible");
-			darkBackground.style.zIndex = "9";
-			projectModalArea.style.display = "flex";
-			projectModalArea.style.opacity = "1";
-
-			function closeModal() {
-				projectModalArea.style.display = "none";
-				projectModalArea.style.opacity = "0";
-				darkBackground.classList.remove("visible");	
-			}
-
-			document.querySelector(".project-times").onclick = function() {
-				projectModal.classList.add("closeModal");
-				setTimeout(closeModal, 300);
-			}
-
-			projectModalArea.onclick = ((e) => {
-				let el = e.srcElement;
-
-				if(el.classList.value == "projectModalArea") {
-					projectModal.classList.add("closeModal");
-					setTimeout(closeModal, 300);
-				}
-			});
-
-			let res = await req.json();
-			let findProject = res.find(element => element.id == projectId);
-		}
-
-	}
-
 	let checkDOMState = setInterval(() => {
 		let loadingScreen = document.querySelector(".loadingScreen");
 		if(document.readyState == 'complete') {
@@ -347,7 +297,6 @@
 <script src="node_modules/particles.js/particles.js"></script>
 <script src="node_modules/particles.js/app.js"></script>
 <script type="module" src="assets/js/main.js"></script>
-<!-- <script type="text/javascript" src="assets/js/projects.js"></script> -->
 
 </body>
 </html>

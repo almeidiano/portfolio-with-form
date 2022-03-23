@@ -9,6 +9,3 @@ listTechs();
 project.listProjects();
 project.getProjectInfo();
 
-// document.getProjectInfo = (info) => {
-// 	console.log(info);
-// }

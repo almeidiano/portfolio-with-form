@@ -36,10 +36,12 @@ header{
 .bro-pic img{
 	height: 500px;
 	animation: showBro .6s forwards;
+	position: relative;
+	bottom: 20px;
 }
 .know-more{
 	position: absolute;
-	bottom: 1px;
+	bottom: -10px;
 	height: 150px;
 	text-align: center;
 	width: 100%;
@@ -73,3 +75,69 @@ header{
 	0% {transform: translateY(0px);}
 	100% {transform: translateY(-10px);}
 }
+@media (max-width: 1185px) {
+	.header-content h1{
+		font-size: 50px;
+	}
+	.bro-pic img{
+		bottom: 30px;
+	}
+}
+@media (max-width: 1080px) {
+	.header-content h1{
+		font-size: 45px;
+	}
+}
+@media (max-width: 1020px) {
+	.header-section{
+		flex-direction: column;
+	}
+	.header-content{
+		padding-top: 9rem;
+		width: 100%;
+		text-align: center;
+	}
+	.bro-pic{
+		display: none;
+	}
+	.header-button{
+		display: flex;
+		justify-content: center;
+	}
+	.header-content h1{
+		font-size: 55px;
+	}
+}
+@media (max-width: 561px) {
+	.header-content h1 {
+	    font-size: 50px;
+	}
+}
+@media (max-width: 509px) {
+	.header-content h1 {
+	    font-size: 45px;
+	}
+}
+@media (max-width: 457px) {
+	.header-content h1 {
+	    font-size: 40px;
+	}
+}
+@media (max-width: 415px) {
+	.sidebar-activated{
+	    width: 70%;
+	}
+}
+@media (min-width: 320px) {
+	.header-content h1 {
+	    font-size: 30px;
+	}
+	.sidebar-activated {
+	    width: 80%;
+	}
+	.skills{
+		padding: 40px 0px;
+	}
+}
+
+

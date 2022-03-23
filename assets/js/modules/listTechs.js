@@ -3,7 +3,7 @@ import allTechnologies from './allTechnologies.js';
 
 export default function listTechs() {
 	allTechnologies.map((item) => {
-		let technologyItem = c(".skills-section .skill-item").cloneNode(true);
+		let technologyItem = c(".skills-section-area .skill-item").cloneNode(true);
 		
 		technologyItem.querySelector(".skill-logo img").src = item.techLogo;
 		technologyItem.querySelector(".skill-title").innerText = item.techName;
@@ -16,7 +16,11 @@ export default function listTechs() {
 			technologyItem.querySelector(".skill-status span").innerText = "Aprendendo";
 		}
 
-		c(".skills-section").append(technologyItem);
+		if(item.rounded) {
+			technologyItem.querySelector(".skill-logo img").style.borderRadius = "100%";
+		}
+
+		c(".skills-section-area").append(technologyItem);
 	})
 
 	cs(".skill-item")[0].remove();

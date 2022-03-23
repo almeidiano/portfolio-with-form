@@ -21,9 +21,9 @@
 .contact{
 	height: 85vh;
 	width: 50%;
-	border-left: 10px solid #153e8e;
-	border-bottom: 10px solid #153e8e;
-	border-top: 10px solid #153e8e;
+	border-left: 10px solid var(--primary-main);
+	border-bottom: 10px solid var(--primary-main);
+	border-top: 10px solid var(--primary-main);
 	animation: blueAnimationContact 2s ease-in-out infinite alternate;
 }
 .contact-content{
@@ -45,7 +45,7 @@
 	position: relative;
   border-radius: 100%;
   font-size: 18px;
-  background: #153e8e;
+  background: var(--primary-main);
   animation: contactIconAnimation 2s ease-in-out infinite alternate;
   height: 50px;   
   width: 50px;
@@ -65,7 +65,7 @@
 	padding-left: 5px;
 }
 .contact-main-content{
-	height: 100%;
+	height: auto;
 }
 form{
 	margin-left: 15px;
@@ -108,21 +108,20 @@ form button{
 	justify-content: center;
 	align-items: center;
 	font-family: 'Poppins';
-	background: #153e8e;
-	color: #FFF;
+	background: var(--primary-main);
+	color: var(--secondary-white);
 	border: none;
 }
 form button:hover{
-	background-color: #11306f
+	background-color: #11306f;
 }
 .contact-title,
 .contact-info-title{
-	color: #FFF;
 	padding-left: 15px;
 }
 .contact-title h2,
 .contact-info-title{
-	padding: 80px 0px 30px 0px;
+	padding: 0px 0px 30px 0px;
 	font-size: 35px;
 	position: relative;
 }
@@ -130,22 +129,22 @@ form button:hover{
 	content: '';
 	width: 60px;
 	height: 4px;
-	background: #153e8e;
+	background: var(--primary-main);
 	display: block;
 }
 .contact-info{
 	height: 85vh;
 	width: 50%;
-	border-right: 10px solid #153e8e;
-	border-bottom: 10px solid #153e8e;
-	border-top: 10px solid #153e8e;
+	border-right: 10px solid var(--primary-main);
+	border-bottom: 10px solid var(--primary-main);
+	border-top: 10px solid var(--primary-main);
 	animation: blueAnimationInfo 2s ease-in-out infinite alternate;
 }
 @keyframes blueAnimationContact {
   0% {
-	border-left: 10px solid #153e8e;
-	border-bottom: 10px solid #153e8e;
-	border-top: 10px solid #153e8e;
+	border-left: 10px solid var(--primary-main);
+	border-bottom: 10px solid var(--primary-main);
+	border-top: 10px solid var(--primary-main);
   }
   
   100% {
@@ -154,11 +153,26 @@ form button:hover{
 	border-top: 10px solid #7DB4EC;
   }
 }
+@keyframes blueAnimationInfoFull {
+  0% {
+	border-left: 10px solid var(--primary-main);
+	border-right: 10px solid var(--primary-main);
+	border-bottom: 10px solid var(--primary-main);
+	border-top: 10px solid var(--primary-main);
+  }
+  
+  100% {
+	border-left: 10px solid #7DB4EC;
+	border-right: 10px solid #7DB4EC;
+	border-bottom: 10px solid #7DB4EC;
+	border-top: 10px solid #7DB4EC;
+  }
+}
 @keyframes blueAnimationInfo {
   0% {
-	border-right: 10px solid #153e8e;
-	border-bottom: 10px solid #153e8e;
-	border-top: 10px solid #153e8e;
+	border-right: 10px solid var(--primary-main);
+	border-bottom: 10px solid var(--primary-main);
+	border-top: 10px solid var(--primary-main);
   }
   
   100% {
@@ -169,10 +183,64 @@ form button:hover{
 }
 @keyframes contactIconAnimation {
   0% {
-  	background: #153e8e;;
+  	background: var(--primary-main);
   }
   
   100% {
   	background: #7DB4EC;
   }
 }
+@media (max-width: 1024px) {
+	form textarea{
+		width: 99%;
+	}
+	form button{
+		width: 100%;
+	}
+	.contact{
+		width: 100%;
+		border-right: 10px solid var(--primary-main);
+		animation: blueAnimationInfoFull 2s ease-in-out infinite alternate;
+	}
+	.contact-info{
+		height: 70vh;
+    width: 100%;
+    border-right: none !important;
+    border-bottom: none !important;
+    border-top: none !important;
+    animation: none;
+	}
+	.contact-area{
+    display: flex;
+    flex-direction: column;
+	}
+}
+@media (max-width: 768px) {
+	.contact{
+		width: 95%;
+	}
+}
+@media (max-width: 700px) {
+	.contact-title{
+		padding: 0;
+	}
+	form{
+		margin: 0;
+	}
+}
+@media (max-width: 555px) {
+	.contact-info{
+		height: 75vh;
+	}
+}
+@media (max-width: 534px) {
+	.contact-title h2{
+		font-size: 30px;
+	}
+}
+@media (max-width: 482px) {
+	.contact-title h2 {
+	    font-size: 27px;
+	}
+}
+/* height */ 

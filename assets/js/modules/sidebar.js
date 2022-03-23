@@ -7,7 +7,7 @@ export default function sidebarConfig() {
     barIcon.onclick = function() {
         barIcon.classList.toggle("active");
         sidebar.classList.toggle("sidebar-activated");
-        darkBackground.classList.toggle("activated");
+        darkBackground.classList.toggle("activated-sidebar");
 
         if(sidebar.classList.contains("sidebar-activated")) {
             body.style.overflow = "hidden";
@@ -16,7 +16,7 @@ export default function sidebarConfig() {
         }
 
         darkBackground.onclick = function() {
-            darkBackground.classList.remove("activated");
+            darkBackground.classList.remove("activated-sidebar");
             barIcon.classList.remove("active");
             sidebar.classList.remove("sidebar-activated");
             body.style.overflow = "auto";
@@ -27,7 +27,7 @@ export default function sidebarConfig() {
 
     sidebarNavItem.forEach((e) => {
         e.onclick = function(item) {
-            darkBackground.classList.toggle("activated");
+            darkBackground.classList.toggle("activated-sidebar");
             barIcon.classList.remove("active");
             sidebar.classList.remove("sidebar-activated");
             body.style.overflow = "auto";
