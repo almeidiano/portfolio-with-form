@@ -1,16 +1,18 @@
+import {c, cs} from "./minSelector.js";
+const nav = c('header nav');
+
 export default function navConfig() {
     const staticScroll = window.scrollY;
-    const nav = document.querySelector('header nav');
     const activatedStatic = staticScroll > 20;
 
     if(activatedStatic) {
         nav.classList.toggle('menu-int-active', staticScroll > 20);
-        document.querySelector(".nav-items").classList.add('nav-items-activated');
+        c(".nav-items").classList.add('nav-items-activated');
     }
 
     function staticActivateNavItem(activatedStatic) {
-        let navitems = document.querySelectorAll(".nav-items li a");
-        let items = document.querySelectorAll(".nav-items li a");
+        let navitems = cs(".nav-items li a");
+        let items = cs(".nav-items li a");
 
         switch(true) {
             case (staticScroll < 530):
@@ -43,8 +45,8 @@ export default function navConfig() {
     staticActivateNavItem(activatedStatic);
 
     document.addEventListener("scroll", () => {
-        const scroll = window.scrollY;
-        let activatedScroll = scroll > 20;
+        const scrollTop = window.scrollY;
+        let activatedScroll = scrollTop > 20;
         
         if(activatedScroll) {
             nav.classList.add('menu-int-active');
@@ -52,8 +54,8 @@ export default function navConfig() {
             nav.classList.remove('menu-int-active');
         }
 
-        let navitems = document.querySelectorAll(".nav-items li a");
-        let items = document.querySelectorAll(".nav-items li a");
+        let navitems = cs(".nav-items li a");
+        let items = cs(".nav-items li a");
 
         switch(true) {
             case (scroll < 530):
@@ -83,7 +85,7 @@ export default function navConfig() {
         }
     })
 
-    let navItems = document.querySelectorAll(".nav-items li a");
+    let navItems = cs(".nav-items li a");
 
     navItems.forEach((e) => {
          e.onclick = function() {
@@ -91,3 +93,5 @@ export default function navConfig() {
         }
     })
 }
+
+export {nav}

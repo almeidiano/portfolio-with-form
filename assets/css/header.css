@@ -6,22 +6,21 @@ header{
 }
 .header-section{  
 	display: flex;
-	padding-top: 90px;
-	height: 90vh;
+	height: 100vh;
 }
 .header-main-content{
 	position: relative;
 }
 .header-content{
-	padding-top: 10rem;
 	width: 50%;
+	height: 100%;
 	display: flex;
-	flex-direction: column;
+	align-items: center;
 	animation: showSection .6s forwards;
 }
 .header-content h1{
 	font-family: 'Poppins';
-	font-size: 58px;
+	font-size: xxx-large;
 	margin: -5px;
 }
 .header-content .description{
@@ -31,27 +30,30 @@ header{
 .bro-pic{
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	width: 50%;
+	height: 95%;
 }
 .bro-pic img{
-	height: 500px;
 	animation: showBro .6s forwards;
 	position: relative;
-	bottom: 20px;
 }
 .know-more{
 	position: absolute;
-	bottom: -10px;
+	bottom: -85px;
 	height: 150px;
 	text-align: center;
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	flex-direction: column;
 	animation: knowAnimation .6s infinite alternate;
 }
 .know-more i{
 	font-size: 35px;
+}
+.know-more a{
+	display: flex;
+	flex-direction: column;
 }
 @keyframes showSection{
 	from{
@@ -76,26 +78,24 @@ header{
 	100% {transform: translateY(-10px);}
 }
 @media (max-width: 1185px) {
-	.header-content h1{
-		font-size: 50px;
-	}
 	.bro-pic img{
 		bottom: 30px;
 	}
 }
-@media (max-width: 1080px) {
-	.header-content h1{
-		font-size: 45px;
-	}
-}
 @media (max-width: 1020px) {
 	.header-section{
-		flex-direction: column;
+		height: 105vh;
+		padding: 0;
+	}
+	.header-main-content{
+	    display: flex;
+	    align-items: center;
+	    flex-direction: column;
 	}
 	.header-content{
-		padding-top: 9rem;
 		width: 100%;
 		text-align: center;
+		justify-content: center;
 	}
 	.bro-pic{
 		display: none;
@@ -104,40 +104,13 @@ header{
 		display: flex;
 		justify-content: center;
 	}
+	.know-more{
+	    position: relative;
+	    bottom: 85px;
+	}
+}
+@media (max-width: 485px) {
 	.header-content h1{
-		font-size: 55px;
+		font-size: xx-large;
 	}
 }
-@media (max-width: 561px) {
-	.header-content h1 {
-	    font-size: 50px;
-	}
-}
-@media (max-width: 509px) {
-	.header-content h1 {
-	    font-size: 45px;
-	}
-}
-@media (max-width: 457px) {
-	.header-content h1 {
-	    font-size: 40px;
-	}
-}
-@media (max-width: 415px) {
-	.sidebar-activated{
-	    width: 70%;
-	}
-}
-@media (min-width: 320px) {
-	.header-content h1 {
-	    font-size: 30px;
-	}
-	.sidebar-activated {
-	    width: 80%;
-	}
-	.skills{
-		padding: 40px 0px;
-	}
-}
-
-

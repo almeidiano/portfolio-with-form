@@ -140,3 +140,13 @@
         width: 70%;
     }
 }
+@media (max-width: 415px) {
+    .sidebar-activated{
+        width: 70%;
+    }
+}
+@media (max-width: 320px) {
+    .sidebar-activated {
+        width: 80%;
+    }
+}

@@ -1,8 +1,10 @@
+import {c, cs} from './minSelector.js';
+
 export default function sidebarConfig() {
-    let barIcon = document.querySelector(".bar-icon");
-    let sidebar = document.querySelector(".sidebar");
-    const darkBackground = document.querySelector(".darkBackground");
-    let body = document.querySelector("body");
+    let barIcon = c(".bar-icon");
+    let sidebar = c(".sidebar");
+    const darkBackground = c(".darkBackground");
+    let body = c("body");
 
     barIcon.onclick = function() {
         barIcon.classList.toggle("active");
@@ -23,7 +25,7 @@ export default function sidebarConfig() {
         }
     }
 
-    let sidebarNavItem = document.querySelectorAll(".sidebar nav li a");
+    let sidebarNavItem = cs(".sidebar nav li a");
 
     sidebarNavItem.forEach((e) => {
         e.onclick = function(item) {

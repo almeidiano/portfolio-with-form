@@ -15,7 +15,7 @@
 }
 
 .contact-section{
-	padding-top: 60px;
+	padding: 60px 0px 20px 0px;
 	display: flex;
 }
 .contact{
@@ -199,11 +199,14 @@ form button:hover{
 	}
 	.contact{
 		width: 100%;
+		height: auto;
+		padding: 30px 0px;
 		border-right: 10px solid var(--primary-main);
 		animation: blueAnimationInfoFull 2s ease-in-out infinite alternate;
 	}
 	.contact-info{
-		height: 70vh;
+		padding: 40px 0px 0px;
+		height: auto;
     width: 100%;
     border-right: none !important;
     border-bottom: none !important;
@@ -228,19 +231,18 @@ form button:hover{
 		margin: 0;
 	}
 }
-@media (max-width: 555px) {
-	.contact-info{
-		height: 75vh;
-	}
-}
 @media (max-width: 534px) {
 	.contact-title h2{
-		font-size: 30px;
+		font-size: xx-large;
 	}
 }
 @media (max-width: 482px) {
 	.contact-title h2 {
-	    font-size: 27px;
+	    font-size: x-large;
 	}
 }
-/* height */ 
+@media (max-width: 320px) {
+	.contact-info{
+		padding-top: 40px;
+	}
+}

@@ -29,6 +29,7 @@
 	<link href="assets/css/contact.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
 
+	<link href="node_modules/izitoast/dist/css/iziToast.min.css" rel="stylesheet">
 </head> 
 <body>
 	<div class="darkBackground"></div>
@@ -101,17 +102,20 @@
 					</ul>
 				</div>
 			</div>
+			<progress value="" max="100"></progress>
 		</nav>
 		<div class="header-main-content">
 			<div class="header-section container">
 				<div class="header-content">
-					<h1 class="font-bold high-emphasis">Samuel Almeida</h1>
-					<div class="description">
-						<div id="typed-strings" style="display: none;"></div>
-						<span id="typed" style="white-space:pre; font-size: 18px !important"></span>
-					</div>
-					<div class="header-button">
-						<a href="#projects" class="button button-outline-primary high-emphasis"><i class="fa-solid fa-eye"></i>Ver Projetos</a>
+					<div>
+						<h1 class="font-bold high-emphasis">Samuel Almeida</h1>
+						<div class="description">
+							<div id="typed-strings" style="display: none;"></div>
+							<span id="typed" style="white-space:pre; font-size: 18px !important"></span>
+						</div>
+						<div class="header-button">
+							<a href="#projects" class="button button-outline-primary high-emphasis"><i class="fa-solid fa-eye"></i>Ver Projetos</a>
+						</div>
 					</div>
 				</div>
 				<div class="bro-pic">
@@ -119,8 +123,10 @@
 				</div>
 			</div>
 			<div class="know-more high-emphasis">
-				<span>Saiba mais!</span>
-				<i class="fa-solid fa-arrow-down"></i>
+				<a href="#about">
+					<span>Saiba mais!</span>
+					<i class="fa-solid fa-arrow-down"></i>
+				</a>
 			</div>
 		</div>
 	</header>
@@ -139,10 +145,10 @@
 									<h1><span>Sou entusiasta em desenvolvimento web</span></h1>
 								</div>
 								<p>Lorem <span style="color: #00b8e4;">Ipsum</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 								<div class="about-social-area">
 									<a href="https://github.com/almeidiano" target="_blank"><i class="fa-brands fa-github"></i></a>
@@ -162,7 +168,7 @@
 							<div class="skills-title-content">
 								<div class="skills-title high-emphasis"><h2>Skills</h2></div>
 								<div class="skills-subtitle high-emphasis">
-									<h3>Tecnologias que estou visando no momento</h3>
+									<h3>Tecnologias que domino ou estudando no momento</h3>
 								</div>
 							</div>
 							<div class="skills-section">
@@ -180,91 +186,96 @@
 							</div>
 
 							</div>
-							
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		
-		<div class="projects-section container-fluid-column" id="projects">
-			<div class="projects-title high-emphasis">
-				<h3>Meus <span class="secondary-bold">Projetos</span></h3>
-			</div>
-			<div class="projects-subtitle high-emphasis">
-				<span>Alguns dos meus projetos que foram aplicados com as tecnologias citadas anteriormente.</span>
+		<div id="main-content">
+			<div class="projects-section container-fluid-column" id="projects">
+				<div class="projects-title high-emphasis">
+					<h3>Meus <span class="secondary-bold">Projetos</span></h3>
+				</div>
+				<div class="projects-subtitle high-emphasis">
+					<span>Projetos que foram aplicados com as tecnologias citadas anteriormente.</span>
+				</div>
+
+				<div class="projects-content"> 
+					
+					<div class="project-item">
+						<div class="overlay">
+							<div class="project-item-details">
+								<div class="project-item-header">
+									<div class="project-title high-emphasis">--</div>
+									<div class="project-tech"></div>
+								</div>
+								<div class="project-details high-emphasis">
+									<div class="row">
+										<a class="github" href="#" target="_blank"><i class="fa-brands fa-github"></i>Código</a>
+										<a class="demo" href="#" target="_blank"><i class="fa-solid fa-square-up-right"></i>Demo</a>
+									</div>
+									<div class="button-info">
+										<a class="info" onclick="getProjectInfo(this)"><i class="fa-solid fa-circle-info"></i>Info</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<img src="" class="thumb" />
+					</div>
+					
+				</div>
+
 			</div>
 
-			<div class="projects-content"> 
-				
-				<div class="project-item">
-					<div class="overlay">
-						<div class="project-item-details">
-							<div class="project-item-header">
-								<div class="project-title high-emphasis">--</div>
-								<div class="project-tech"></div>
+		<div class="contact-section" id="contact">
+			<div class="contact-area container-fluid">
+				<div class="contact">
+					<div class="contact-content">
+						<div class="contact-main-content">
+							<div class="contact-title high-emphasis">
+								<h2>Envie uma mensagem!</h2>
 							</div>
-							<div class="project-details high-emphasis">
-								<a class="github" href="#" target="_blank"><i class="fa-brands fa-github"></i>Código</a>
-								<a class="demo" href="#" target="_blank"><i class="fa-solid fa-square-up-right"></i>Demo</a>
-								<a class="info" onclick="getProjectInfo(this)"><i class="fa-solid fa-circle-info"></i>Info</a>
+							<div class="contact-form">
+								<form>
+									<input type="text" name="userName" placeholder="Seu Nome">
+									<input type="email" name="userEmail" placeholder="Email">
+									<input type="text" name="userSubject" placeholder="Assunto">
+									<textarea name="mainMessage" placeholder="Mensagem"></textarea>
+									<button type="submit high-emphasis">
+										<i class="fa-solid fa-right"></i>
+									Enviar Mensagem</button>
+								</form>
 							</div>
 						</div>
 					</div>
-					<img src="" class="thumb" />
 				</div>
-				
-			</div>
-
-		</div>
-	</div>
-
-	<div class="contact-section" id="contact">
-		<div class="contact-area container-fluid">
-			<div class="contact">
-				<div class="contact-content">
-					<div class="contact-main-content">
-						<div class="contact-title high-emphasis">
-							<h2>Envie uma mensagem!</h2>
-						</div>
-						<div class="contact-form">
-							<form>
-								<input type="text" name="userName" placeholder="Seu Nome">
-								<input type="email" name="userEmail" placeholder="Email">
-								<input type="text" name="userSubject" placeholder="Assunto">
-								<textarea name="mainMessage" placeholder="Mensagem"></textarea>
-								<button type="submit high-emphasis">
-									<i class="fa-solid fa-right"></i>
-								Enviar Mensagem</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contact-info">
-				<div class="contact-content">
-					<div class="contact-main-content">
-						<div class="contact-info-title high-emphasis"><h2>Informações de contato</h2></div>
-						<div class="contact-info-desc high-emphasis">Sinta-se à vontade para esclarecer qualquer dúvida a respeito de carreira ou algo que envolva desenvolvimento!</div>
-						<div class="contact-info-items">
-							<div>
-								<i class="fa-solid fa-envelope"></i>
-								<span>mymail@mail.com</span>
-							</div>
-							<div>
-								<i class="fa-solid fa-mobile-screen-button"></i>
-								<span>(81) 98312-2216</span>
-							</div>
-							<div>
-								<i class="fa-solid fa-location-dot"></i>
-								<span>Recife - PE</span>
+				<div class="contact-info">
+					<div class="contact-content">
+						<div class="contact-main-content">
+							<div class="contact-info-title high-emphasis"><h2>Informações de contato</h2></div>
+							<div class="contact-info-desc high-emphasis">Sinta-se à vontade para esclarecer qualquer dúvida a respeito de carreira ou algo que envolva desenvolvimento!</div>
+							<div class="contact-info-items">
+								<div>
+									<i class="fa-solid fa-envelope"></i>
+									<span>mymail@mail.com</span>
+								</div>
+								<div>
+									<i class="fa-solid fa-mobile-screen-button"></i>
+									<span>(81) 98312-2216</span>
+								</div>
+								<div>
+									<i class="fa-solid fa-location-dot"></i>
+									<span>Recife - PE</span>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>	
 		</div>
-	</div>
+		</div>
+		</div>
 </main>
 
 <footer>
@@ -292,6 +303,14 @@
     typeSpeed: 20,
     loop: true
   });
+
+  let innerWidth = window.innerWidth;
+
+	window.onresize = function(event) {
+		if(innerWidth != event.target.innerWidth) {
+			document.location.reload(true);
+		}
+	}
 </script>
 
 <script src="node_modules/particles.js/particles.js"></script>
