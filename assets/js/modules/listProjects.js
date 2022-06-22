@@ -37,6 +37,9 @@ function listProjects() {
                 case 'html/css':
                 projectStackImg[0].src = 'assets/img/icons/html-css-shield.svg'
                 break;
+                case 'react':
+                projectStackImg[0].src = 'assets/img/icons/react-icon.svg'
+                break;
                 case 'javascript':
                 projectStackImg[1].src = 'assets/img/icons/javascript-icon.svg'
                 break;
@@ -194,6 +197,9 @@ function getProjectInfo() {
                 switch(stack) {
                     case 'html/css':
                     projectStacksImg[0].src = 'assets/img/icons/html-css-shield.svg'
+                    break;
+                    case 'react':
+                    projectStacksImg[0].src = 'assets/img/icons/react-icon.svg'
                     break;
                     case 'javascript':
                     projectStacksImg[1].src = 'assets/img/icons/javascript-icon.svg'

@@ -14,30 +14,22 @@ export default function submitForm() {
 			progressBarColor: '#FFF',
 		});
 
-		// iziToast.warning({
-		// 	position: 'bottomRight',
-		// 	backgroundColor: 'rgba(182, 143, 0, 0.9)',
-		// 	theme: 'dark',
-		// 	title: 'Aviso',
-		// 	message: 'Preencha todos os campos.',
-		// 	progressBarColor: '#FFF',
-		// });
+		iziToast.warning({
+			position: 'bottomRight',
+			backgroundColor: 'rgba(182, 143, 0, 0.9)',
+			theme: 'dark',
+			title: 'Aviso',
+			message: 'Preencha todos os campos.',
+			progressBarColor: '#FFF',
+		});
 
-		// iziToast.success({
-		// 	position: 'bottomRight',
-		// 	backgroundColor: 'rgba(17, 97, 52, 0.9)',
-		// 	theme: 'dark',
-		// 	title: 'Sucesso!',
-		// 	message: 'Mensagem enviada com sucesso.',
-		// 	progressBarColor: '#FFF',
-		// });
-
-		const formData = new FormData(c(".contact-form form"));
-
-		for(var values of formData.values()) {
-			if(values === "") {
-
-			}
-		}
+		iziToast.success({
+			position: 'bottomRight',
+			backgroundColor: 'rgba(17, 97, 52, 0.9)',
+			theme: 'dark',
+			title: 'Sucesso!',
+			message: 'Mensagem enviada com sucesso.',
+			progressBarColor: '#FFF',
+		});
 	}
 }

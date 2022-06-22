@@ -1,0 +1,14 @@
+footer .name{
+	margin: auto;
+	text-align: center;
+	padding: 20px 0px;
+}
+footer .footer-icons a{
+	font-size: 18px;
+}
+footer .footer-icons{
+	padding: 5px 0px;
+}
+footer{
+	background-color: #181a1b;
+}
