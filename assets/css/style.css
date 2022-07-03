@@ -16,7 +16,8 @@ a{
 }
 html{
 	scroll-behavior: smooth;
-  color: var(--secondary-white)
+  	color: var(--secondary-white);
+	overflow-x: hidden;
 }
 :root{
 	--primary-light: rgb(125, 180, 236);

@@ -46,7 +46,7 @@ header{
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	animation: knowAnimation .6s infinite alternate;
+	animation: knowHeaderAnimation .6s infinite alternate;
 }
 .know-more i{
 	font-size: 35px;
@@ -73,7 +73,7 @@ header{
 		transform: translate3d(0px, 0, 0);
 	}
 }
-@keyframes knowAnimation{
+@keyframes knowHeaderAnimation{
 	0% {transform: translateY(0px);}
 	100% {transform: translateY(-10px);}
 }
