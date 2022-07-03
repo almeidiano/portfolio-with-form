@@ -1,5 +1,5 @@
 import {c} from './minSelector.js';
-import '../../../node_modules/izitoast/dist/js/iziToast.min.js';
+import '../../../assets/dist/izitoast/dist/js/iziToast.min.js';
 
 export default function submitForm() {
 	c(".contact-form button").onclick = (e) => {
