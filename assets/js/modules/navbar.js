@@ -4,47 +4,16 @@ const nav = c('header nav');
 export default function navConfig() {
     const staticScroll = window.scrollY;
     const activatedStatic = staticScroll > 20;
+    const sections = cs('section');
+    const navItems = cs('.nav-items li a');
 
     if(activatedStatic) {
         nav.classList.toggle('menu-int-active', staticScroll > 20);
         c(".nav-items").classList.add('nav-items-activated');
     }
 
-    function staticActivateNavItem(activatedStatic) {
-        let navitems = cs(".nav-items li a");
-        let items = cs(".nav-items li a");
-
-        switch(true) {
-            case (staticScroll < 530):
-                navitems[0].classList.add("item-activated");
-                navitems[1].classList.remove("item-activated");
-                navitems[2].classList.remove("item-activated");
-                navitems[3].classList.remove("item-activated");
-            break;
-            case (staticScroll > 530 && staticScroll < 1219):
-                navitems[1].classList.add("item-activated");
-                navitems[0].classList.remove("item-activated");
-                navitems[2].classList.remove("item-activated");
-                navitems[3].classList.remove("item-activated");
-            break;
-            case (staticScroll > 1219 && staticScroll < 1841):
-                navitems[2].classList.add("item-activated");
-                navitems[0].classList.remove("item-activated");
-                navitems[1].classList.remove("item-activated");
-                navitems[3].classList.remove("item-activated");
-            break;
-            case (staticScroll > 1841):
-                navitems[3].classList.add("item-activated");
-                navitems[0].classList.remove("item-activated");
-                navitems[1].classList.remove("item-activated");
-                navitems[2].classList.remove("item-activated");
-            break;
-        }
-    }
-
-    staticActivateNavItem(activatedStatic);
-
     document.addEventListener("scroll", () => {
+        let current = "";
         const scrollTop = window.scrollY;
         let activatedScroll = scrollTop > 20;
         
@@ -54,43 +23,21 @@ export default function navConfig() {
             nav.classList.remove('menu-int-active');
         }
 
-        let navitems = cs(".nav-items li a");
-        let items = cs(".nav-items li a");
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
 
-        switch(true) {
-            case (scroll < 530):
-                navitems[0].classList.add("item-activated");
-                navitems[1].classList.remove("item-activated");
-                navitems[2].classList.remove("item-activated");
-                navitems[3].classList.remove("item-activated");
-            break;
-            case (scroll > 530 && scroll < 1219):
-                navitems[1].classList.add("item-activated");
-                navitems[0].classList.remove("item-activated");
-                navitems[2].classList.remove("item-activated");
-                navitems[3].classList.remove("item-activated");
-            break;
-            case (scroll > 1219 && scroll < 1841):
-                navitems[2].classList.add("item-activated");
-                navitems[0].classList.remove("item-activated");
-                navitems[1].classList.remove("item-activated");
-                navitems[3].classList.remove("item-activated");
-            break;
-            case (scroll > 1841):
-                navitems[3].classList.add("item-activated");
-                navitems[0].classList.remove("item-activated");
-                navitems[1].classList.remove("item-activated");
-                navitems[2].classList.remove("item-activated");
-            break;
-        }
-    })
+            if(scrollY >= sectionTop - sectionHeight / 3) {
+                current = section.getAttribute('id');
+            }
+        });
 
-    let navItems = cs(".nav-items li a");
-
-    navItems.forEach((e) => {
-         e.onclick = function() {
-            e.classList.add("item-activated");
-        }
+        navItems.forEach((li) => {
+            li.classList.remove('item-activated');
+            if(li.classList.contains(current)){
+                li.classList.add('item-activated');
+            }
+        })
     })
 }
 
